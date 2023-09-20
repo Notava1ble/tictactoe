@@ -21,15 +21,25 @@ const restartButton = document.getElementById("restartButton");
 const winningMessageTextElement = document.querySelector(
 	"[data-winning-message-text]"
 );
+const menu = document.querySelector(".menu");
+const roundOver = document.querySelector(".round-over");
 let circleTurn;
+let selectedRounds;
 
 // points
 let xPoints = 0;
 let circlePoints = 0;
-
-startGame();
+let currentRound = 0;
 
 restartButton.addEventListener("click", startGame);
+
+function manageRounds(rounds) {
+	selectedRounds = checkRounds(rounds);
+	console.log(selectedRounds + "rounds selected");
+	menu.style.display = "none";
+	board.style.display = "grid";
+	startGame();
+}
 
 function startGame() {
 	circleTurn = false;
@@ -112,4 +122,50 @@ function addPoint(currentClass) {
 		circlePoints++;
 		circle_Points.innerHTML = circlePoints;
 	}
+	if (xPoints === selectedRounds || circlePoints === selectedRounds) {
+		winningMessageElement.classList.remove("show");
+		roundOver.style.display = "flex";
+	} else {
+		console.log(xPoints);
+		console.log(circlePoints);
+	}
 }
+
+// menu
+const endButton = document.getElementById("endButton");
+const threeRounds = document.getElementById("3");
+const fiveRounds = document.getElementById("5");
+const costumRound = document.querySelector("#c");
+
+endButton.addEventListener("click", (e) => {
+	reload();
+});
+
+threeRounds.addEventListener("click", (e) => {
+	manageRounds(3);
+});
+
+fiveRounds.addEventListener("click", (e) => {
+	manageRounds(5);
+});
+
+function checkRounds(rounds) {
+	if (rounds >= 1) {
+		if (rounds >= 20) {
+			return (selectedRounds = 20);
+		} else {
+			return (selectedRounds = rounds);
+		}
+	} else {
+		return (selectedRounds = 1);
+	}
+}
+
+function reload() {
+	location.reload();
+}
+
+costumRound.addEventListener("click", (e) => {
+	alert("Feature havent been added yet");
+	reload();
+});
