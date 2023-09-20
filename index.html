@@ -8,6 +8,27 @@
 		<script src="main.js" defer></script>
 	</head>
 	<body>
+		<header class="menu">
+			<h1>Select Rounds</h1>
+			<ul>
+				<li id="3" class="modes">3</li>
+				<li id="5" class="modes">5</li>
+				<li id="c" class="modes">Costum</li>
+			</ul>
+		</header>
+		<div class="costum-rounds" id="costumRounds">
+			<button id="plus" class="costum-changers">+</button>
+			<input
+				type="number"
+				min="1"
+				max="20"
+				inputmode="numeric"
+				class="costumRoundNumber"
+				placeholder="5"
+			/>
+			<button id="minus" class="costum-changers">-</button>
+			<button id="continue" class="continue">Continue</button>
+		</div>
 		<div class="board" id="board">
 			<div class="cell" data-cell></div>
 			<div class="cell" data-cell></div>
@@ -21,7 +42,7 @@
 		</div>
 		<div class="winning-message">
 			<div data-winning-message-text></div>
-			<button id="restartButton">Restart</button>
+			<button id="restartButton" class="Next-Round-button">Next Round</button>
 			<div class="points">
 				<div class="x-wrapper pointWrapper">
 					<p>X</p>
@@ -32,6 +53,10 @@
 					<span class="circlePoints">0</span>
 				</div>
 			</div>
+		</div>
+		<div class="round-over">
+			<div id="finalWinner">X Wins</div>
+			<button id="endButton" class="end-game-button">End Game</button>
 		</div>
 	</body>
 </html>
