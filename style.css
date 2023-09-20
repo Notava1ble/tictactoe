@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
 *,
 *::after,
 *::before {
@@ -11,12 +13,13 @@
 
 body {
 	margin: 0;
+	font: 1.5rem "Nunito", sans-serif;
 }
 
 .board {
 	width: 100%;
 	height: 100vh;
-	display: grid;
+	display: none;
 	place-content: center;
 	justify-items: center;
 	align-items: center;
@@ -169,4 +172,141 @@ body {
 	margin: 0;
 	margin-bottom: 12px;
 	border-bottom: 2px solid white;
+}
+
+.Next-Round-button {
+	margin-bottom: 20px;
+}
+
+.menu {
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.menu h1 {
+	position: absolute;
+	top: 0;
+	margin-top: 0;
+	background-color: black;
+	color: white;
+	width: 100%;
+	text-align: center;
+	padding: 2rem;
+	font-size: 4rem;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
+}
+
+ul li {
+	background-color: rgb(64, 64, 64);
+	padding: 1rem;
+	font-size: 3rem;
+	border-radius: 12px;
+	color: white;
+}
+
+ul li:hover {
+	transform: scale(120%);
+	transition: all 100ms;
+}
+
+.costum-rounds {
+	display: none;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-size: 5rem;
+	background-color: rgb(22, 22, 22);
+	color: white;
+}
+
+.costum-changers {
+	border: none;
+	outline: none;
+	background-color: inherit;
+	font: inherit;
+	color: white;
+	margin: 10px;
+}
+
+.costum-rounds input {
+	font: inherit;
+	width: 100%;
+	border: none;
+	background-color: inherit;
+	color: white;
+	text-align: center;
+}
+
+.costum-rounds input:focus {
+	border: none;
+	outline: none;
+}
+
+.continue {
+	border: none;
+	outline: none;
+	background-color: inherit;
+	font: inherit;
+	color: rgb(0, 0, 0);
+	margin: 10px;
+	font-size: 2.5rem;
+	background-color: rgb(255, 255, 255);
+	padding: 1rem;
+	border-radius: 20px;
+	font-weight: 400;
+}
+
+.continue:hover {
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+
+input::-webkit-inner-spin-button {
+	display: none;
+}
+
+.round-over {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	font-size: 5.5rem;
+	color: white;
+}
+
+.round-over button {
+	font: inherit;
+	outline: none;
+	border: none;
+	font-size: 3.5rem;
+	border-radius: 20px;
+	padding: 1rem;
+	margin-top: 20px;
+}
+
+.round-over button:hover {
+	opacity: 0.9;
+	transform: scale(1.1);
+	transition: all 100ms;
+}
+
+ul {
+	padding-left: 0;
 }
